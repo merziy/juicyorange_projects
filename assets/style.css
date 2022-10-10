@@ -1,0 +1,426 @@
+#login {
+  background: url(/assets/images/LearningImg.png) no-repeat center center /cover;
+}
+
+#login img {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+}
+
+#login button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#login button > span, #login button > i {
+  margin-right: auto;
+}
+
+#login button {
+  color: #fff;
+  background-color: #003380;
+  width: 80%;
+  margin: 5px auto;
+}
+
+#login button:nth-last-child(2) {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#login p:nth-child(3) {
+  line-height: 18px;
+}
+
+#applyLink {
+  font-size: 13px;
+}
+
+#keyboard h3 {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 2rem;
+}
+
+#keyboard img {
+  display: block;
+  margin: 0 auto;
+  width: 65%;
+  border: 4px solid black;
+}
+
+#curriculumPointers, #programBenefits > p {
+  color: #00a4d8;
+}
+
+#buttons {
+  background: #c3e0ef center center;
+  padding: 25px 15px;
+}
+
+#buttons button {
+  color: #fff;
+  background-color: #003380;
+}
+
+#programBenefits img {
+  width: 100px;
+  height: 100px;
+}
+
+#programBenefits h3 {
+font-size: 1.5em;
+}
+
+#programBenefits p:nth-child(2) {
+  margin-top: 1rem;
+}
+
+.icons p {
+  font-weight: bold;
+}
+
+#carousel {
+  margin-top: 2rem;
+  background: #c3e0ef center center;
+  padding: 10px 20%;
+}
+
+#carousel img {
+  border-radius: 50%;
+  width: 250px;
+  float: left;
+  shape-outside: circle();
+  padding: 25px;
+}
+
+#carousel h3 {
+font-weight: bold;
+}
+
+.testimonyCaption p {
+  margin: 0rem;
+}
+
+.carousel-indicators {
+  bottom: -4rem;
+}
+
+.carousel-indicators li {
+  border-width: 2px;
+  border-color: rgb(0, 0, 0);
+  border-style: solid;
+  border-radius: 50%;
+  background-color: rgb(195, 224, 239);
+  width: 12px;
+  height: 12px;
+}
+
+.carousel-indicators .active {
+  background-color: #003380;
+}
+
+.testimonyCaption p:nth-child(1) {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+#outcomes {
+  margin-top: 4rem;
+}
+
+.statistics {
+  margin: 0rem 8rem;
+  text-align: center;
+}
+
+.statisticsItem {
+  display: flex;
+  justify-content: space-around;
+}
+
+.statisticsItem .h3 {
+  font-weight: bold;
+}
+
+.statisticsImg {
+  margin-top: -3rem;
+}
+
+.statisticsItem:nth-child(1) p:nth-child(2),
+.statisticsItem:nth-child(2) p:nth-child(2),
+.statisticsItem:nth-child(4) p:nth-child(2),
+.statisticsItem:nth-child(5) p:nth-child(2){
+  margin: 0 auto;
+  width: 80%;
+}
+
+.statisticsItem:nth-child(1) p:nth-child(2),
+.statisticsItem:nth-child(4) p:nth-child(2) {
+  color: #f29f01;
+}
+
+.statisticsItem:nth-child(2) p:nth-child(2),
+.statisticsItem:nth-child(5) p:nth-child(2) {
+  color: #00a4d8;
+}
+
+.statisticsItem:nth-child(1) {
+  margin-bottom: -2rem;
+}
+
+.statisticsItem:nth-child(5)  {
+  margin-top: -4rem;
+}
+
+.statisticsItem p:nth-child(1) {
+  font-size: 2.5em;
+}
+
+#video {
+  background: #c3e0ef center center;
+  padding: 10px 20%;
+  margin-top: 2rem;
+}
+
+#video img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  border: 3px solid black;
+}
+
+footer {
+  background-color: #000;
+  color: #fff;
+}
+
+#footerFlex {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+#socialMedia {
+  border-bottom: 1px;
+}
+
+#socialMedia a:hover {
+  opacity: .6;
+}
+
+#socialMedia i {
+  padding-right: 1rem;
+}
+
+#footerLeft p {
+  font-size: 12px;
+}
+
+#footerLeft a, #footerRight a {
+  color: #fff;
+}
+
+#giveToday:hover, #footerRight a:hover {
+  color: #108fba;
+  text-decoration: none;
+}
+
+#giveToday p,
+#giveToday img {
+  display: inline;
+}
+
+@media only screen and (max-width: 900px) {
+  .testimonyCaption p:nth-child(1) {
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-align: left;
+  }
+  #carousel {
+    padding: 1rem 2rem;
+    display: flex;  
+    justify-content: center;
+  }
+  #carousel img {
+    shape-outside: none;
+    float: none;
+  }
+  .hamburger {
+    margin: .1rem .1rem !important;
+  }
+  #keyboard h3,
+  #programBenefits h3 {
+    font-size: 1.2rem;
+    margin: 0 auto;
+    width: 80%;
+  }
+  #keyboard p,
+  #programBenefits p {
+    font-size: 1rem;
+    width: 100%;
+    margin: revert;
+  }
+  #buttons {
+   margin-top: 1rem;
+  }
+  .icons {
+    width: 30%;
+  }
+  .statistics {
+    margin: 0rem 0rem;
+  }
+  .statisticsItem:nth-child(1) p:nth-child(2),
+  .statisticsItem:nth-child(2) p:nth-child(2),
+  .statisticsItem:nth-child(4) p:nth-child(2),
+  .statisticsItem:nth-child(5) p:nth-child(2) {
+    margin: 0rem auto;
+    font-size: 12px;
+    width: 50%;
+  }
+  .statisticsItem p:nth-child(1) {
+    font-size: 1.5rem;
+  }
+  #video h3 {
+    font-size: 20px;
+  }
+  #footerRight {
+    font-size: 13px;
+  }
+  #socialMedia i {
+    padding-right: .3rem;
+  }
+  #giveToday>p {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #loginDiv {
+      padding: 1rem 2rem;
+    }
+  #keyboard h3, #programBenefits h3 {
+    font-size: 2.2rem;
+    margin: 0 auto;
+    width: 80%;
+  }
+  #programBenefits {
+    width: 60%;
+  }
+  .testimonyCaption p:nth-child(1) {
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: justify;
+    letter-spacing: 3px;
+  }
+  #carousel h3 {
+    font-size: 2rem;
+  }
+  .hamburger {
+    margin: 2rem 3rem !important;
+  }
+  #footerFlex {
+    padding: 2rem 0rem 0rem 7rem;
+  }
+}
+
+.hamburger {
+  width: inherit !important;
+  float: right;
+  padding: 10px 10px 10px 10px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  border-radius: 15%;
+  overflow: visible;
+  background-color: #fff!important;
+}
+
+.hamburger:hover {
+  opacity: 0.7;
+}
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  display: block;
+}
+
+.hamburger-inner::before {
+  top: -10px;
+}
+
+.hamburger-inner::after {
+  bottom: -10px;
+}
+
+
+.hamburger--collapse .hamburger-inner {
+  top: auto;
+  bottom: 0;
+  transition-duration: 0.13s;
+  transition-delay: 0.13s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--collapse .hamburger-inner::after {
+  top: -20px;
+  transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear;
+}
+
+.hamburger--collapse .hamburger-inner::before {
+  transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--collapse.is-active .hamburger-inner {
+  transform: translate3d(0, -10px, 0) rotate(-45deg);
+  transition-delay: 0.22s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger--collapse.is-active .hamburger-inner::after {
+  top: 0;
+  opacity: 0;
+  transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.22s linear;
+}
+
+.hamburger--collapse.is-active .hamburger-inner::before {
+  top: 0;
+  transform: rotate(-90deg);
+  transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
