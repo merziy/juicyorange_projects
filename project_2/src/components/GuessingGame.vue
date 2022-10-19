@@ -5,6 +5,14 @@
         <p>?</p>
       </div>
     </div>
+    <div class="gameControls">
+      <div class="wheel">
+        <image 
+          :src="require(`..//assets/images/spinner.png`)"
+          class="spinner" 
+          alt="" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -41,6 +49,14 @@ export default defineComponent({
         font-size: 15rem;
         text-align: center;
       }
+    }
+  }
+  .gameControls {
+
+    .spinner {
+      float: right;
+      width: 40px;
+      height: 40px;
     }
   }
 }
