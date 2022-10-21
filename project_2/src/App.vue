@@ -15,6 +15,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+// Bootstrap 4.5
+@import '@/assets/stylesheets/bootstrap.min.css';
 * {
   margin: 0rem;
   #app {
@@ -24,6 +26,7 @@ export default defineComponent({
     text-align: center;
     color: #2c3e50;
     background: url(./assets/images/sound-495859.jpg) no-repeat fixed center;
+    background-size: cover;
     height: 100vh;
   }
 }
