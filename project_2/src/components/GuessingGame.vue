@@ -8,8 +8,8 @@
       </div>
       <div class="gameControls col-lg-3 col-sm-12 ">
         <img :src="require('@/assets/images/spin-me-text.png')" alt="" />
-        <div class="wheel mb-sm-1 d-flex justify-content-center align-items-center"
-        @click="changeIsOpen" :class="{'rotateIcon': isOpen, 'isntOpen': true}">
+        <div class="wheel mb-sm-1 d-flex justify-content-center align-items-center" @click="changeIsOpen"
+          :class="{'rotate': isOpen, 'isntOpen': true}">
           <img :src="require(`@/assets/images/spinner.png`)" class="spinner" alt="" />
         </div>
         <div class="buttons pt-md-4 d-flex justify-content-md-around">
@@ -82,14 +82,30 @@ export default defineComponent({
         border-radius: 50%;
         box-shadow: 0 0 50px #8BA9AF;
 
+
         .spinner {
           height: 17rem;
-          margin-top: -5rem;
+          margin-top: -4rem;
         }
       }
 
       .rotateIcon {
         transform: rotate(45deg);
+      }
+
+      .rotate  {
+        animation: rotation 1s linear;
+        animation-iteration-count: 4;
+      }
+
+      @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(359deg);
+        }
       }
     }
   }
