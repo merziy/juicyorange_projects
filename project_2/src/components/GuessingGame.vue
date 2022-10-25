@@ -6,10 +6,11 @@
           <p>?</p>
         </div>
       </div>
+      <!-- <img class="userImage" :src="image.url" alt=""/> -->
       <div class="gameControls col-lg-3 col-sm-12 ">
         <img :src="require('@/assets/images/spin-me-text.png')" alt="" />
         <div class="wheel mb-sm-1 d-flex justify-content-center align-items-center" @click="changeIsOpen"
-          :class="{'rotate': isOpen, 'isntOpen': true}">
+          :class="{'rotate': isOpen}">
           <img :src="require(`@/assets/images/spinner.png`)" class="spinner" alt="" />
         </div>
         <div class="buttons pt-md-4 d-flex justify-content-md-around">
@@ -22,19 +23,37 @@
 </template>
 
 <script lang="ts">
+import axios from 'axios';
 import { defineComponent } from "vue";
+
+// export interface Image {
+//   url: String,
+//   title: String,
+//   clue: String
+// }
 
 export default defineComponent({
   name: "GuessingGame",
   data() {
     return {
       isOpen: false,
+      image: {
+        title: String,
+        clue: String,
+        url: String
+      } 
     }
   },
   methods: {
     changeIsOpen() {
       this.isOpen = !this.isOpen
     }
+  },
+  mounted() {
+    axios
+      .get('http://localhost:8080/data/sampleData.json')
+      .then((response) => (this.image = response.data.images
+    ))
   }
 });
 </script>
@@ -67,6 +86,12 @@ export default defineComponent({
         }
       }
     }
+
+    // .userImage {
+    //   padding: 1rem 1rem;
+    //   height: 95vh;
+    //   width: 10vh;
+    // }
 
     .gameControls {
       .buttons {
