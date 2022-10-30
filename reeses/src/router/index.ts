@@ -1,24 +1,24 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import EnterCode from '../views/EnterCode.vue'
+import PageOne from '../views/PageOne.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'enterCode',
-    component: EnterCode
+    name: 'PageOne',
+    component: PageOne
   },
   {
-    path: '/FormPage',
-    name: 'Form',
+    path: '/form',
+    name: 'PageTwo',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/FormPage.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/PageTwo.vue')
   },
   {
-    path: '/ThankYou',
-    name: 'Thanks',
-    component: () => import('../views/ThankYou.vue')
+    path: '/thankyou',
+    name: 'PageThree',
+    component: () => import('../views/PageThree.vue')
   }
 ]
 

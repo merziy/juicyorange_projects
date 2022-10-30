@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img class="d-flex pt-5 px-md-5" :src="require('@/assets/images/reeses-ambush.png')" alt="" />
+    <img class="pt-4 pt-md-5 d-flex" :src="require('@/assets/images/reeses-ambush.png')" alt="" />
   </div>
 </template>
 
@@ -13,13 +13,13 @@ export default defineComponent({
 
 <style scoped lang="scss">
 img {
-  width: 430px;
+  width: 400px;
   margin: 0 auto;
 }
 
 @media only screen and (max-width: 768px) {
   img {
-    width: 300px;
+    width: 280px;
   }
 }
 </style>

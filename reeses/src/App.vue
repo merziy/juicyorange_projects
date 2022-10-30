@@ -1,5 +1,5 @@
 <template>
-  <div class="p-0 container-fluid">
+  <div class="container-fluid p-0">
     <router-view />
   </div>
   <SiteFooter />
@@ -27,9 +27,6 @@ export default defineComponent({
     font-family: "Helvetica";
     color: rgb(255, 237, 59);
     font-weight: bold;
-    width: 40%;
-    margin: 0 auto;
-    margin-top: 10rem;
     font-size: 16px;
     text-transform: uppercase;
     text-align: center;
@@ -40,13 +37,9 @@ export default defineComponent({
 
   span {
     font-weight: bold;
-    display: block;
-    margin: 0 auto;
-    width: 70%;
   }
 
   form {
-    margin: 0 auto;
 
     input {
       border-width: 3px;
@@ -70,9 +63,47 @@ export default defineComponent({
     text-align: center;
     border-radius: 5px;
     background-color: rgb(64, 32, 33);
-    width: 20%;
-    margin: 5px;
-    margin-top: 1rem;
+  }
+}
+.home {
+  background: url('@/assets/images/reeses-background.png') no-repeat center center /cover;
+  height: 770px;
+  .inputForm {
+    p {
+      width: 70%;
+      margin: 0 auto;
+      padding-top: 7rem;
+    }
+    span {
+      width: 70%;
+    }
+    form {
+      margin: 0 auto;
+    }
+  }
+}
+// Responsive Rules
+@media only screen and (min-width: 700px) and (max-width: 767px) {
+  .home {
+    .inputForm {
+      p {
+        width: 50%;
+        padding-top: 9rem;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+  .home {
+    height: 1000px;
+    .inputForm {
+      p {
+        padding-top: 7rem;
+        font-size: 1.75rem;
+        width: 50%;
+        margin: 0 auto;
+      }
+    }
   }
 }
 </style>
