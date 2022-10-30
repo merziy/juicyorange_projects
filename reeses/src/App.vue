@@ -47,6 +47,7 @@ export default defineComponent({
       border-style: solid;
       border-radius: 5px;
       background-color: rgb(255, 237, 59);
+      text-align: center;
     }
 
     input::placeholder {
