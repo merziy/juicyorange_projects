@@ -29,7 +29,7 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .home {
-  background: url('@/assets/images/reeses-background.png') no-repeat center /cover;
+  background: url('@/assets/images/reeses-background.jpeg') no-repeat center /cover;
 
     .inputForm {
       p {

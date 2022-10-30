@@ -47,7 +47,7 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .home {
-  background: url('@/assets/images/reeses-background.png') no-repeat center center /cover;
+  background: url('@/assets/images/reeses-background.jpeg') no-repeat center center /cover;
 
   input {
     margin-top: .5rem;

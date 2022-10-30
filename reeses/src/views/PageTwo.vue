@@ -58,7 +58,7 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .home {
-  background: url('@/assets/images/reeses-background-2.png') no-repeat center /cover;
+  background: url('@/assets/images/reeses-background-2.jpeg') no-repeat center /cover;
   .inputForm {
     p {
       padding-top: 6rem;

@@ -67,7 +67,7 @@ export default defineComponent({
   }
 }
 .home {
-  background: url('@/assets/images/reeses-background.png') no-repeat center center /cover;
+  background: url('@/assets/images/reeses-background.jpeg') no-repeat center center /cover;
   height: 770px;
   .inputForm {
     p {
