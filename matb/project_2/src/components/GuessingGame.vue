@@ -39,8 +39,9 @@
 import axios from 'axios'
 import { defineComponent } from "vue"
 
-let audio1 = require('@/assets/audio/failure-drum-sound-effect-2-7184.mp3')
-let audio2 = require('@/assets/audio/tada-fanfare-a-6313.mp3')
+let audio1 = require('@/assets/audio/tada-fanfare-a-6313.mp3')
+let audio2 = require('@/assets/audio/failure-drum-sound-effect-2-7184.mp3')
+let audio3 = require('@/assets/audio/clock-ticking-103687.mp3')
 
 export default defineComponent({
   name: "GuessingGame",
@@ -56,22 +57,32 @@ export default defineComponent({
       } 
     }
   },
+  setup() {
+    const success = new Audio(audio1)
+    const failure = new Audio(audio2)
+    const clock = new Audio(audio3)
+    const playSuccess = () => {
+      success.play()
+    }
+    const playFailure = () => {
+      failure.play()
+    }
+    const playClock = () => {
+      clock.play()
+    }
+    return {playSuccess, playFailure, playClock}
+  },
   methods: {
     changeImage() {
       this.userImg = false;
       this.changeColor = true;
       this.isOpen = !this.isOpen
+      this.playClock()
       setTimeout(() => {
         this.changeColor = false;
         this.userImg = true
         this.isOpen = !this.isOpen
       }, 4000);
-    },
-    playSuccess() {
-      return audio1;
-    },
-    playFailure() {
-      return audio2;
     }
   },
   mounted() {
