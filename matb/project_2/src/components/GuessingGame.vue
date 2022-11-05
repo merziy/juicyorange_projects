@@ -1,21 +1,34 @@
 <template>
   <div class="matb container-fluid ml-lg-4">
     <div class="row align-items-center">
-      <div class="guessingImage w-100 col-lg-9 col-sm-12 align-items-center">
-        <div class="innerGuessingImage">
-          <p>?</p>
+      <div class="w-100 col-lg-9 col-sm-12 align-items-center">
+        <div class="userImg_container" v-if="userImg">
+          <h3>{{ image.title }}</h3>
+          <img :class="{'userImage': userImg }" :src="image.url" alt="" />
+          <p>{{ image.clue }}</p>
+        </div>
+        <div v-else class="guessingImage">
+          <div class="innerGuessingImage">
+            <p :class="{'qMark': changeColor}">?</p>
+          </div>
         </div>
       </div>
-      <!-- <img class="userImage" :src="image.url" alt=""/> -->
       <div class="gameControls col-lg-3 col-sm-12 ">
         <img :src="require('@/assets/images/spin-me-text.png')" alt="" />
-        <div class="wheel mb-sm-1 d-flex justify-content-center align-items-center" @click="changeIsOpen"
-          :class="{'rotate': isOpen}">
-          <img :src="require(`@/assets/images/spinner.png`)" class="spinner" alt="" />
+        <div
+          class="wheel mb-sm-1 d-flex justify-content-center align-items-center"
+          @click="changeImage();"
+          :class="{'rotate': isOpen}"
+        >
+          <img
+            :src="require(`@/assets/images/spinner.png`)"
+            class="spinner"
+            alt=""
+          />
         </div>
         <div class="buttons pt-md-4 d-flex justify-content-md-around">
-          <img :src="require('@/assets/images/green_button.png')" alt="" />
-          <img :src="require('@/assets/images/red_button.png')" alt="" />
+          <img @click="playSuccess()" :src="require('@/assets/images/green_button.png')" alt="" />
+          <img @click="playFailure()" :src="require('@/assets/images/red_button.png')" alt="" />
         </div>
       </div>
     </div>
@@ -23,20 +36,19 @@
 </template>
 
 <script lang="ts">
-import axios from 'axios';
-import { defineComponent } from "vue";
+import axios from 'axios'
+import { defineComponent } from "vue"
 
-// export interface Image {
-//   url: String,
-//   title: String,
-//   clue: String
-// }
+let audio1 = require('@/assets/audio/failure-drum-sound-effect-2-7184.mp3')
+let audio2 = require('@/assets/audio/tada-fanfare-a-6313.mp3')
 
 export default defineComponent({
   name: "GuessingGame",
   data() {
     return {
+      changeColor: false,
       isOpen: false,
+      userImg: false,
       image: {
         title: String,
         clue: String,
@@ -45,8 +57,21 @@ export default defineComponent({
     }
   },
   methods: {
-    changeIsOpen() {
+    changeImage() {
+      this.userImg = false;
+      this.changeColor = true;
       this.isOpen = !this.isOpen
+      setTimeout(() => {
+        this.changeColor = false;
+        this.userImg = true
+        this.isOpen = !this.isOpen
+      }, 4000);
+    },
+    playSuccess() {
+      return audio1;
+    },
+    playFailure() {
+      return audio2;
     }
   },
   mounted() {
@@ -64,16 +89,29 @@ export default defineComponent({
   .row {
     height: 100vh;
 
-    .guessingImage {
+    .userImg_container {
       background-color: #fff;
       padding: 1rem 1rem;
-      height: 95vh;
-      // display: flex;
-      // align-items: center;
+
+      .userImage {
+        padding: 0rem;
+        height: 80vh;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      p {
+        margin: 0rem;
+      }
+    }
+
+    .guessingImage {
+      background-color: #fff;
+      padding: 3rem 1rem;
 
       .innerGuessingImage {
         background-color: #8BA9AF;
-        height: 90vh;
+        height: 80vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -84,14 +122,13 @@ export default defineComponent({
           font-size: 15rem;
           text-align: center;
         }
+
+        .qMark {
+          animation: 4s bgcolorchange;
+        }
+        
       }
     }
-
-    // .userImage {
-    //   padding: 1rem 1rem;
-    //   height: 95vh;
-    //   width: 10vh;
-    // }
 
     .gameControls {
       .buttons {
@@ -99,14 +136,12 @@ export default defineComponent({
       }
 
       .wheel {
-        // background: url('../assets/images/wheel-dark.jpg') no-repeat center center;
         background-color: #FFF;
         width: 12rem;
         height: 12rem;
         margin: 0 auto;
         border-radius: 50%;
         box-shadow: 0 0 50px #8BA9AF;
-
 
         .spinner {
           height: 17rem;
@@ -132,22 +167,42 @@ export default defineComponent({
           transform: rotate(359deg);
         }
       }
+      @keyframes bgcolorchange {
+        25% {
+          color: white;
+        }
+
+        50% {
+          color: black;
+        }
+
+        75% {
+          color: white;
+        }
+
+        100% {
+          color: black;
+        }
+      }
     }
   }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1100px) {
   .matb {
 
     .row {
 
-      .guessingImage {
-        height: 45vh;
+      .guessingImage, .userImg_container {
+        height: auto;
 
         .innerGuessingImage {
           background-color: #8BA9AF;
-          height: 40vh;
+          height: 32vh;
+        }
 
+        .userImage {
+          height: 32vh;
         }
       }
     }
