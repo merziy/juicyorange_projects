@@ -3,9 +3,17 @@
     <div class="row align-items-center">
       <div class="w-100 col-lg-9 col-sm-12 align-items-center">
         <div class="userImg_container" v-if="userImg">
-          <h3>{{ image.title }}</h3>
-          <img :class="{'userImage': userImg }" :src="image.url" alt="" />
-          <p>{{ image.clue }}</p>
+          <!-- <h3>{{ image.title }}</h3> -->
+          <!-- <img :class="{'userImage': userImg }" :src="image.url" alt="" /> -->
+          <!-- <p>{{ image.clue }}</p> -->
+          <h3>Sample Clue Title</h3>
+          <img
+            src="http://source.unsplash.com/random"
+            alt=""
+            :class="{'userImage': userImg }"
+          >
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+          aliqua.</p>
         </div>
         <div v-else class="guessingImage">
           <div class="innerGuessingImage">
