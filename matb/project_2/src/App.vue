@@ -3,8 +3,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import GuessingGame from "./components/GuessingGame.vue";
+import { defineComponent } from "vue"
+import GuessingGame from "./components/GuessingGame.vue"
 
 export default defineComponent({
   name: "App",
@@ -29,5 +29,9 @@ export default defineComponent({
     background-size: cover;
     height: 100vh;
   }
+}
+@font-face {
+  font-family: GothicMedium;
+  src: url('@/assets/fonts/Gotham-Medium.otf');
 }
 </style>

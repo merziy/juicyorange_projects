@@ -1,12 +1,12 @@
 <template>
-  <div class="matb container-fluid ml-lg-4">
+  <div class="matb container-fluid">
     <div class="row align-items-center">
       <div class="w-100 col-lg-9 col-sm-12 align-items-center">
         <div class="userImg_container" v-if="userImg">
           <!-- <h3>{{ image.title }}</h3> -->
           <!-- <img :class="{'userImage': userImg }" :src="image.url" alt="" /> -->
           <!-- <p>{{ image.clue }}</p> -->
-          <h3>Sample Clue Title</h3>
+          <h3>SAMPLE CLUE TITLE</h3>
           <img
             src="http://source.unsplash.com/random"
             alt=""
@@ -22,19 +22,19 @@
         </div>
       </div>
       <div class="gameControls col-lg-3 col-sm-12 ">
-        <img :src="require('@/assets/images/spin-me-text.png')" alt="" />
+        <img class="spinMe" :src="require('@/assets/images/spin-me-text-2.png')" alt="" />
         <div
           class="wheel mb-sm-1 d-flex justify-content-center align-items-center"
-          @click="changeImage();"
-          :class="{'rotate': isOpen}"
         >
           <img
             :src="require(`@/assets/images/spinner.png`)"
             class="spinner"
             alt=""
+            @click="changeImage();"
+            :class="{'rotate': isOpen}"
           />
         </div>
-        <div class="buttons pt-md-4 d-flex justify-content-md-around">
+        <div class="buttons pt-md-5 d-flex">
           <img @click="playSuccess()" :src="require('@/assets/images/green_button.png')" alt="" />
           <img @click="playFailure()" :src="require('@/assets/images/red_button.png')" alt="" />
         </div>
@@ -105,6 +105,11 @@ export default defineComponent({
 <style lang="scss">
 .matb {
 
+  h3,p {
+    font-family: GothicMedium;
+    font-weight: bold;
+  }
+
   .row {
     height: 100vh;
 
@@ -151,20 +156,21 @@ export default defineComponent({
 
     .gameControls {
       .buttons {
-        justify-content: center;
+        justify-content: space-evenly;
+      }
+
+      .spinMe {
+        width: 15rem;
       }
 
       .wheel {
-        background-color: #FFF;
-        width: 12rem;
-        height: 12rem;
         margin: 0 auto;
-        border-radius: 50%;
-        box-shadow: 0 0 50px #8BA9AF;
+        background: url('@/assets/images/spinner-base.png') no-repeat center center /contain; 
 
         .spinner {
           height: 17rem;
           margin-top: -4rem;
+          margin-left: 10px;
         }
       }
 
@@ -175,6 +181,7 @@ export default defineComponent({
       .rotate  {
         animation: rotation 1s linear;
         animation-iteration-count: 4;
+        transform-origin: center 62%;
       }
 
       @keyframes rotation {
@@ -223,7 +230,7 @@ export default defineComponent({
         .userImage {
           height: 32vh;
         }
-      }
+      } 
     }
   }
 }
