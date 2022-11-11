@@ -214,7 +214,7 @@ export default defineComponent({
   }
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 990px) {
   .matb {
 
     .row {
