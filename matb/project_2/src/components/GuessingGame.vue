@@ -126,6 +126,7 @@ export default defineComponent({
       bottom: 0;
       left: 0;
       right: 0;
+      top: 0;
     }
   }  
   .row {
@@ -200,6 +201,7 @@ export default defineComponent({
         justify-content: center;
         height: 9rem;
         padding-top: 4rem;
+        width: auto;
       }
 
       .spinMe {
