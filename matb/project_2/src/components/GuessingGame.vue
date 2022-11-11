@@ -1,27 +1,34 @@
 <template>
   <div class="matb container-fluid">
     <div class="row align-items-center">
-      <div class="w-100 col-lg-9 col-sm-12 align-items-center">
-        <div class="userImg_container" v-if="userImg">
-          <!-- <h3>{{ image.title }}</h3> -->
-          <!-- <img :class="{'userImage': userImg }" :src="image.url" alt="" /> -->
-          <!-- <p>{{ image.clue }}</p> -->
-          <h3>SAMPLE CLUE TITLE</h3>
-          <img
-            src="http://source.unsplash.com/random"
-            alt=""
-            :class="{'userImage': userImg }"
-          >
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-          aliqua.</p>
-        </div>
-        <div v-else class="guessingImage">
-          <div class="innerGuessingImage">
-            <p :class="{'qMark': changeColor}">?</p>
+      <div class="w-100 col-md-9 col-sm-12 align-items-center">
+        <div class="aspectWrapper" v-if="userImg">
+          <div class="userImg_container">
+            <!-- <h3>{{ image.title }}</h3> -->
+            <!-- <img :class="{'userImage': userImg }" :src="image.url" alt="" /> -->
+            <!-- <p>{{ image.clue }}</p> -->
+            <div class="centerAbsoluteText">
+              <h3>SAMPLE CLUE TITLE</h3>
+            </div>
+            <img
+              src="http://source.unsplash.com/random"
+              alt=""
+              :class="{'userImage': userImg }"
+              class="img-fluid"
+            >
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua.</p>
           </div>
         </div>
-      </div>
-      <div class="gameControls col-lg-3 col-sm-12 ">
+        <div v-else class="aspectWrapper">
+          <div class="guessingImage">
+            <div class="innerGuessingImage">
+              <p :class="{'qMark': changeColor}">?</p>
+            </div>
+          </div>
+        </div>
+        </div>
+      <div class="gameControls col-md-3 col-sm-12 ">
         <img class="spinMe" :src="require('@/assets/images/spin-me-text-2.png')" alt="" />
         <div
           class="wheel mb-sm-1 d-flex justify-content-center align-items-center"
@@ -34,9 +41,9 @@
             :class="{'rotate': isOpen}"
           />
         </div>
-        <div class="buttons pt-md-5 d-flex">
-          <img @click="playSuccess()" :src="require('@/assets/images/green_button.png')" alt="" />
-          <img @click="playFailure()" :src="require('@/assets/images/red_button.png')" alt="" />
+        <div class="buttons d-flex">
+          <img @click="playSuccess()" :src="require('@/assets/images/green_button.png')" alt="" style="padding:0rem .5rem;" />
+          <img @click="playFailure()" :src="require('@/assets/images/red_button.png')" alt="" style="padding:0rem .5rem;" />
         </div>
       </div>
     </div>
@@ -108,18 +115,45 @@ export default defineComponent({
   h3,p {
     font-family: GothicMedium;
     font-weight: bold;
+    color: black;
   }
 
+  .centerAbsoluteText {
+    position: relative;
+    
+    h3 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }  
   .row {
     height: 100vh;
 
+    .aspectWrapper {
+      position: relative;
+    
+      &:before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: (9 / 16) * 100%;
+      }
+
     .userImg_container {
       background-color: #fff;
-      padding: 1rem 1rem;
+      padding: 3rem 1rem;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
 
       .userImage {
         padding: 0rem;
-        height: 80vh;
+        height: 100%;
         width: 100%;
         object-fit: cover;
       }
@@ -132,10 +166,17 @@ export default defineComponent({
     .guessingImage {
       background-color: #fff;
       padding: 3rem 1rem;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
 
       .innerGuessingImage {
         background-color: #8BA9AF;
-        height: 80vh;
+        height: 100%;
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -143,32 +184,35 @@ export default defineComponent({
         p {
           color: #000;
           font-weight: 700;
-          font-size: 15rem;
+          font-size: 10rem;
           text-align: center;
         }
 
         .qMark {
           animation: 4s bgcolorchange;
         }
-        
+
+        }
       }
     }
-
     .gameControls {
       .buttons {
-        justify-content: space-evenly;
+        justify-content: center;
+        height: 9rem;
+        padding-top: 4rem;
       }
 
       .spinMe {
-        width: 15rem;
+        width: 12rem;
       }
 
       .wheel {
         margin: 0 auto;
         background: url('@/assets/images/spinner-base.png') no-repeat center center /contain; 
+        height: 12rem;
 
         .spinner {
-          height: 17rem;
+          height: 10rem;
           margin-top: -4rem;
           margin-left: 10px;
         }
@@ -181,7 +225,7 @@ export default defineComponent({
       .rotate  {
         animation: rotation 1s linear;
         animation-iteration-count: 4;
-        transform-origin: center 62%;
+        transform-origin: center 68%;
       }
 
       @keyframes rotation {
@@ -213,24 +257,80 @@ export default defineComponent({
     }
   }
 }
-
-@media only screen and (max-width: 990px) {
+/*
+/
+/ Only two media query rules!
+/ Sorry! Only way I could make it work :(
+*/
+@media only screen and (max-width: 768px) {
   .matb {
-
     .row {
-
-      .guessingImage, .userImg_container {
-        height: auto;
-
-        .innerGuessingImage {
-          background-color: #8BA9AF;
-          height: 32vh;
+      .aspectWrapper {
+        .userImg_container {
+          .centerAbsoluteText {
+            h3 {
+              font-size: 1rem;
+            }
+          }
+          p {
+            font-size: .8rem;
+          }
         }
 
-        .userImage {
-          height: 32vh;
+        .guessingImage {
+          .innerGuessingImage {
+            p {
+              font-size: 5rem;
+            }
+          }
         }
-      } 
+
+        .userImg_container {
+          .userImage {
+            height: 100%;
+          }
+        }
+      }
+      .gameControls {
+        .buttons {
+          height: 8rem;
+          padding-top: 3rem;
+        }
+
+        .spinMe {
+          width: 10rem;
+        }
+
+        .wheel {
+          margin: 0 auto;
+          background: url('@/assets/images/spinner-base.png') no-repeat center center /contain;
+          height: 10rem;
+
+          .spinner {
+            height: 8rem;
+            margin-top: -4rem;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 450px) {
+  .matb {
+    .row {
+      .aspectWrapper {
+        .userImg_container {
+          p {
+            font-size: .6rem;
+          }
+        }
+      }
+      .gameControls {
+        .spinMe {
+          width: 8rem;
+        }
+      }
     }
   }
 }
