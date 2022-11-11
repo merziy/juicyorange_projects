@@ -296,7 +296,7 @@ export default defineComponent({
       .gameControls {
         .buttons {
           height: 8rem;
-          padding-top: 3rem;
+          padding-top: 2rem;
         }
 
         .spinMe {
@@ -330,7 +330,7 @@ export default defineComponent({
       }
       .gameControls {
         .spinMe {
-          width: 8rem;
+          width: 12rem;
         }
       }
     }
