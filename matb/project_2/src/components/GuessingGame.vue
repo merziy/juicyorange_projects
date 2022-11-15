@@ -110,7 +110,8 @@ export default defineComponent({
 <style lang="scss">
 .matb {
 
-  h3,p {
+  h3,
+  p {
     font-family: GothicMedium;
     font-weight: bold;
     color: black;
@@ -118,7 +119,7 @@ export default defineComponent({
 
   .centerAbsoluteText {
     position: relative;
-    
+
     h3 {
       position: absolute;
       left: 0;
@@ -126,84 +127,85 @@ export default defineComponent({
       top: 0;
       margin-top: .5rem;
     }
-  }  
+  }
+
   .row {
     height: 100vh;
 
     .backgroundWrapper {
       background-color: #fff;
 
-    .userImg_container {
-      width: 100%;
-      position: relative;
-
-      &:before {
-        display: block;
-        content: "";
+      .userImg_container {
         width: 100%;
-        padding-top: (9 / 16) * 100%;
-      }
+        position: relative;
+        height: auto;
 
-      .userImage {
-        height: 100%;
-        height: -moz-available;
-        height: -webkit-fill-available;
-        height: fill-available;
-        width: 100%;
-        object-fit: cover;
-        position: absolute;
-        margin: 3rem 0rem;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-      }
-
-      p {
-        margin: 0rem;
-        font-size: 1rem;
-      }
-    }
-
-    .guessingImage {
-      width: 100%;
-      position: relative;
-
-      &:before {
+        &:before {
           display: block;
           content: "";
           width: 100%;
           padding-top: (9 / 16) * 100%;
         }
 
-      .innerGuessingImage {
-        background-color: #8BA9AF;
-        margin: 3rem 0rem;
-        height: auto;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+        .userImage {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          position: absolute;
+          padding: 3rem 0rem;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+        }
 
         p {
-          color: #000;
-          font-weight: 700;
-          font-size: 10rem;
-          text-align: center;
+          margin: 0rem;
+          font-size: 1rem;
+          padding-bottom: .5rem;
+        }
+      }
+
+      .guessingImage {
+        width: 100%;
+        position: relative;
+
+        &:before {
+          display: block;
+          content: "";
+          width: 100%;
+          padding-top: (9 / 16) * 100%;
         }
 
-        .qMark {
-          animation: 4s bgcolorchange;
-        }
+        .innerGuessingImage {
+          background-color: #8BA9AF;
+          margin: 3rem 0rem;
+          height: auto;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+
+          p {
+            color: #000;
+            font-weight: 700;
+            font-size: 10rem;
+            text-align: center;
+          }
+
+          .qMark {
+            animation: 4s bgcolorchange;
+          }
 
         }
       }
     }
+
     .gameControls {
       .buttons {
         justify-content: center;
@@ -222,7 +224,7 @@ export default defineComponent({
 
       .wheel {
         margin: 0 auto;
-        background: url('@/assets/images/spinner-base.png') no-repeat center center /contain; 
+        background: url('@/assets/images/spinner-base.png') no-repeat center center /contain;
         height: 12rem;
 
         .spinner {
@@ -236,7 +238,7 @@ export default defineComponent({
         transform: rotate(45deg);
       }
 
-      .rotate  {
+      .rotate {
         animation: rotation 1s linear;
         animation-iteration-count: 4;
         transform-origin: center 68%;
@@ -251,6 +253,7 @@ export default defineComponent({
           transform: rotate(359deg);
         }
       }
+
       @keyframes bgcolorchange {
         25% {
           color: white;
@@ -271,6 +274,7 @@ export default defineComponent({
     }
   }
 }
+
 /*
 /
 / Only two media query rules!
@@ -286,6 +290,7 @@ export default defineComponent({
               font-size: 1rem;
             }
           }
+
           p {
             font-size: .8rem;
           }
@@ -305,6 +310,7 @@ export default defineComponent({
           }
         }
       }
+
       .gameControls {
         .buttons {
           height: 8rem;
@@ -330,6 +336,7 @@ export default defineComponent({
     }
   }
 }
+
 @media only screen and (max-width: 500px) {
   .matb {
     .row {
@@ -340,6 +347,7 @@ export default defineComponent({
           }
         }
       }
+
       .gameControls {
         .spinMe {
           width: 12rem;
