@@ -2,14 +2,12 @@
   <div class="matb container-fluid">
     <div class="row align-items-center">
       <div class="w-100 col-md-9 col-sm-12 align-items-center">
-        <div class="aspectWrapper" v-if="userImg">
-          <div class="userImg_container">
+        <div v-if="userImg" class="backgroundWrapper">
+          <div class="userImg_container centerAbsoluteText">
             <!-- <h3>{{ image.title }}</h3> -->
-            <!-- <img :class="{'userImage': userImg }" :src="image.url" alt="" /> -->
+            <!-- <img :class="{'userImage': userImg }" class="img-fluid" :src="image.url" alt="" /> -->
             <!-- <p>{{ image.clue }}</p> -->
-            <div class="centerAbsoluteText">
-              <h3>SAMPLE CLUE TITLE</h3>
-            </div>
+            <h3>SAMPLE CLUE TITLE</h3>
             <img
               src="http://source.unsplash.com/random"
               alt=""
@@ -20,14 +18,14 @@
             aliqua.</p>
           </div>
         </div>
-        <div v-else class="aspectWrapper">
+        <div v-else class="backgroundWrapper">
           <div class="guessingImage">
             <div class="innerGuessingImage">
               <p :class="{'qMark': changeColor}">?</p>
             </div>
           </div>
         </div>
-        </div>
+      </div>
       <div class="gameControls col-md-3 col-sm-12 ">
         <img class="spinMe" :src="require('@/assets/images/spin-me-text-2.png')" alt="" />
         <div
@@ -42,8 +40,8 @@
           />
         </div>
         <div class="buttons d-flex">
-          <img @click="playSuccess()" :src="require('@/assets/images/green_button.png')" alt="" style="padding:0rem .5rem;" />
-          <img @click="playFailure()" :src="require('@/assets/images/red_button.png')" alt="" style="padding:0rem .5rem;" />
+          <img @click="playSuccess()" :src="require('@/assets/images/green_button.png')" alt="" />
+          <img @click="playFailure()" :src="require('@/assets/images/red_button.png')" alt="" />
         </div>
       </div>
     </div>
@@ -123,17 +121,22 @@ export default defineComponent({
     
     h3 {
       position: absolute;
-      bottom: 0;
       left: 0;
       right: 0;
+      top: 0;
+      margin-top: .5rem;
     }
   }  
   .row {
     height: 100vh;
 
-    .aspectWrapper {
+    .backgroundWrapper {
+      background-color: #fff;
+
+    .userImg_container {
+      width: 100%;
       position: relative;
-    
+
       &:before {
         display: block;
         content: "";
@@ -141,21 +144,19 @@ export default defineComponent({
         padding-top: (9 / 16) * 100%;
       }
 
-    .userImg_container {
-      background-color: #fff;
-      padding: 3rem 1rem;
-      width: 100%;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-
       .userImage {
-        padding: 0rem;
         height: 100%;
+        height: -moz-available;
+        height: -webkit-fill-available;
+        height: fill-available;
         width: 100%;
         object-fit: cover;
+        position: absolute;
+        margin: 3rem 0rem;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
       }
 
       p {
@@ -165,22 +166,29 @@ export default defineComponent({
     }
 
     .guessingImage {
-      background-color: #fff;
-      padding: 3rem 1rem;
       width: 100%;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+      position: relative;
+
+      &:before {
+          display: block;
+          content: "";
+          width: 100%;
+          padding-top: (9 / 16) * 100%;
+        }
 
       .innerGuessingImage {
         background-color: #8BA9AF;
-        height: 100%;
+        margin: 3rem 0rem;
+        height: auto;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
 
         p {
           color: #000;
@@ -199,9 +207,13 @@ export default defineComponent({
     .gameControls {
       .buttons {
         justify-content: center;
-        height: 9rem;
         padding-top: 4rem;
-        width: auto;
+
+        img {
+          width: 5rem;
+          height: 4rem;
+          padding: 0rem .5rem;
+        }
       }
 
       .spinMe {
@@ -282,7 +294,7 @@ export default defineComponent({
         .guessingImage {
           .innerGuessingImage {
             p {
-              font-size: 5rem;
+              font-size: 4rem;
             }
           }
         }
@@ -318,13 +330,13 @@ export default defineComponent({
     }
   }
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 500px) {
   .matb {
     .row {
-      .aspectWrapper {
+      .backgroundWrapper {
         .userImg_container {
           p {
-            font-size: .6rem;
+            font-size: .7rem;
           }
         }
       }
