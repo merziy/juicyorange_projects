@@ -160,6 +160,7 @@ export default defineComponent({
 
       p {
         margin: 0rem;
+        font-size: 1rem;
       }
     }
 
