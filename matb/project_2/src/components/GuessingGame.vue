@@ -342,6 +342,9 @@ export default defineComponent({
     .row {
       .backgroundWrapper {
         .userImg_container {
+          .userImage {
+            padding: 3.5rem 0rem;
+          }
           p {
             font-size: .7rem;
           }
