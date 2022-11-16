@@ -361,13 +361,14 @@ export default defineComponent({
           }
           p {
             font-size: .7rem;
+            margin: .2rem 0rem;
           }
         }
         .guessingImage {
           .innerGuessingImage {
             p {
               font-size: 4rem;
-              margin: .1rem 0rem;
+              margin: 0rem;
             }
           }
         }
