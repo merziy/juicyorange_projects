@@ -27,7 +27,7 @@
         </div>
       </div>
       <div class="gameControls col-md-3 col-sm-12 ">
-        <img class="spinMe" :src="require('@/assets/images/spin-me-text-2.png')" alt="" />
+        <img class="spinMe" :src="require('@/assets/images/spin-me-text-3.png')" alt="" />
         <div
           class="wheel mb-sm-1 d-flex justify-content-center align-items-center"
         >
@@ -127,6 +127,12 @@ export default defineComponent({
       top: 0;
       margin-top: .5rem;
     }
+    p {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
   }
 
   .row {
@@ -138,7 +144,6 @@ export default defineComponent({
       .userImg_container {
         width: 100%;
         position: relative;
-        height: auto;
 
         &:before {
           display: block;
@@ -160,9 +165,7 @@ export default defineComponent({
         }
 
         p {
-          margin: 0rem;
           font-size: 1rem;
-          padding-bottom: .5rem;
         }
       }
 
@@ -178,10 +181,10 @@ export default defineComponent({
         }
 
         .innerGuessingImage {
-          background-color: #8BA9AF;
-          margin: 3rem 0rem;
           height: auto;
           width: 100%;
+          background-color: #8BA9AF;
+          margin: 3rem 0rem;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -219,7 +222,8 @@ export default defineComponent({
       }
 
       .spinMe {
-        width: 12rem;
+        width: 10rem;
+        margin-left: 1rem;
       }
 
       .wheel {
@@ -280,6 +284,13 @@ export default defineComponent({
 / Only two media query rules!
 / Sorry! Only way I could make it work :(
 */
+@media only screen and (max-width: 1376px) {
+  .centerAbsoluteText {
+    p {
+      margin: 0rem;
+    }
+  }
+}
 @media only screen and (max-width: 768px) {
   .matb {
     .row {
@@ -342,11 +353,21 @@ export default defineComponent({
     .row {
       .backgroundWrapper {
         .userImg_container {
+          h3 {
+            margin-top: .8rem;
+          }
           .userImage {
             padding: 3.5rem 0rem;
           }
           p {
             font-size: .7rem;
+          }
+        }
+        .guessingImage {
+          .innerGuessingImage {
+            p {
+              font-size: 3rem;
+            }
           }
         }
       }
