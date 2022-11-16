@@ -215,8 +215,8 @@ export default defineComponent({
         padding-top: 4rem;
 
         img {
-          width: 5rem;
-          height: 4rem;
+          width: 6rem;
+          height: 5rem;
           padding: 0rem .5rem;
         }
       }
@@ -348,7 +348,7 @@ export default defineComponent({
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 540px) {
   .matb {
     .row {
       .backgroundWrapper {
