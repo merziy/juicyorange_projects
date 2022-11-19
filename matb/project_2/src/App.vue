@@ -30,9 +30,10 @@ export default defineComponent({
     height: 100vh;
   }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 540px) {
   #app {
     background-attachment: scroll;
+    height: 125%;
   }
 }
 @font-face {
