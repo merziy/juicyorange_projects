@@ -30,6 +30,10 @@ export default defineComponent({
     height: 100vh;
   }
 }
+/*
+* My fix for background: cover not working on
+* Safari/iPhone mobile
+*/
 @media only screen and (max-width: 540px) {
   #app {
     background-attachment: scroll;
