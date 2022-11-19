@@ -30,6 +30,11 @@ export default defineComponent({
     height: 100vh;
   }
 }
+@media only screen and (max-width: 768px) {
+  #app {
+    background-attachment: scroll;
+  }
+}
 @font-face {
   font-family: GothicMedium;
   src: url('@/assets/fonts/Gotham-Medium.otf');
