@@ -3,27 +3,30 @@
     <div class="row align-items-center">
       <div class="w-100 col-md-9 col-sm-12 align-items-center">
         <div v-if="userImg" class="backgroundWrapper">
-          <div class="userImg_container centerAbsoluteText">
+          <h3>TITLE HERE</h3>
+          <div class="userImg_container">
             <!-- <h3>{{ image.title }}</h3> -->
             <!-- <img :class="{'userImage': userImg }" class="img-fluid" :src="image.url" alt="" /> -->
             <!-- <p>{{ image.clue }}</p> -->
-            <h3>SAMPLE CLUE TITLE</h3>
             <img
               src="http://source.unsplash.com/random"
               alt=""
               :class="{'userImage': userImg }"
               class="img-fluid"
             >
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua.</p>
           </div>
+          <p class="clue">Clue question here! Ces ut etus. Solupta aribus. Lescit licieni hicium, volores sequaes Solupta aribus. Lescit licieni
+          ces ut etus. Solupta aribus. Lescit etionem et, ni rem?</p>
         </div>
         <div v-else class="backgroundWrapper">
+          <h3>TITLE HERE</h3>
           <div class="guessingImage">
             <div class="innerGuessingImage">
               <p :class="{'qMark': changeColor}">?</p>
             </div>
           </div>
+          <p class="clue">Clue question here! Ces ut etus. Solupta aribus. Lescit licieni hicium, volores sequaes Solupta aribus. Lescit licieni
+          ces ut etus. Solupta aribus. Lescit etionem et, ni rem?</p>
         </div>
       </div>
       <div class="gameControls col-md-3 col-sm-12 ">
@@ -117,74 +120,47 @@ export default defineComponent({
     color: black;
   }
 
-  .centerAbsoluteText {
-    position: relative;
-
-    h3 {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      margin-top: .5rem;
-    }
-    p {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-    }
+  h3 {
+    font-size: 2.75rem;
+    transform: scale(0.7, 1);
   }
 
   .row {
-    height: 100vh;
 
     .backgroundWrapper {
       background-color: #fff;
+      padding: 5px 0rem;
+      margin-top: 1.5rem;
 
       .userImg_container {
         width: 100%;
         position: relative;
-
-        &:before {
-          display: block;
-          content: "";
-          width: 100%;
-          padding-top: (9 / 16) * 100%;
-        }
+        padding-top: (9 / 16) * 100%;
 
         .userImage {
           height: 100%;
           width: 100%;
           object-fit: cover;
           position: absolute;
-          padding: 3rem 0rem;
           top: 0;
           right: 0;
           bottom: 0;
           left: 0;
         }
-
-        p {
-          font-size: 1rem;
-        }
+      }
+      p {
+        font-size: 1.25rem;
       }
 
       .guessingImage {
         width: 100%;
         position: relative;
-
-        &:before {
-          display: block;
-          content: "";
-          width: 100%;
-          padding-top: (9 / 16) * 100%;
-        }
+        padding-top: (9 / 16) * 100%;
 
         .innerGuessingImage {
           height: auto;
           width: 100%;
           background-color: #8BA9AF;
-          margin: 3rem 0rem;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -207,9 +183,15 @@ export default defineComponent({
 
         }
       }
+      .clue {
+        margin: 0px;
+        padding: 5px 10px;
+      }
     }
 
     .gameControls {
+      margin-top: 4rem;
+      
       .buttons {
         justify-content: center;
         padding-top: 4rem;
@@ -323,6 +305,8 @@ export default defineComponent({
       }
 
       .gameControls {
+        margin-top: 5px;
+        
         .buttons {
           height: 8rem;
           padding-top: 2rem;
@@ -353,12 +337,6 @@ export default defineComponent({
     .row {
       .backgroundWrapper {
         .userImg_container {
-          h3 {
-            margin-top: .8rem;
-          }
-          .userImage {
-            padding: 3.5rem 0rem;
-          }
           p {
             font-size: .7rem;
             margin: .2rem 0rem;
@@ -376,7 +354,7 @@ export default defineComponent({
 
       .gameControls {
         .spinMe {
-          width: 12rem;
+          width: 10rem;
         }
       }
     }

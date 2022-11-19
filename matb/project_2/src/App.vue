@@ -25,7 +25,7 @@ export default defineComponent({
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    background: url(./assets/images/sound-495859.jpg) no-repeat fixed center;
+    background: url(./assets/images/soundwave-2.jpg) no-repeat fixed center;
     background-size: cover;
     height: 100vh;
   }
